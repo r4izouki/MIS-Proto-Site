@@ -1,0 +1,664 @@
+/* =============================================
+   SIP - Internship Finder
+   Student project - Prince Mohammad Bin Fahd University
+   ============================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a2e3b;
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* ---- BROWSER CHROME MOCKUP ---- */
+.browser-wrap {
+    max-width: 860px;
+    margin: 30px auto;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.browser-bar {
+    background-color: #d8d8d8;
+    padding: 7px 12px;
+    display: table;
+    width: 100%;
+}
+
+.browser-dots {
+    display: table-cell;
+    vertical-align: middle;
+    width: 60px;
+}
+
+.browser-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #aaa;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.browser-url-bar {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.browser-url-inner {
+    background-color: #fff;
+    height: 16px;
+    border-radius: 3px;
+    width: 100%;
+    display: block;
+}
+
+/* ---- SITE WRAPPER ---- */
+.site {
+    background-color: #2a4a5e;
+}
+
+/* ---- TOP HEADER ---- */
+.top-header {
+    background-color: #2a4a5e;
+    display: table;
+    width: 100%;
+    padding: 14px 20px;
+}
+
+.logo-area {
+    display: table-cell;
+    vertical-align: middle;
+    width: 150px;
+}
+
+.logo {
+    display: inline-block;
+    position: relative;
+    padding-top: 8px;
+}
+
+.logo-dot {
+    width: 13px;
+    height: 13px;
+    background-color: #cc2233;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 12px;
+}
+
+.logo-text {
+    font-size: 2.4em;
+    font-weight: bold;
+    color: white;
+    font-style: italic;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.logo-text .logo-i {
+    color: #cc2233;
+}
+
+.site-title-area {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.site-title-area h1 {
+    font-size: 1.55em;
+    letter-spacing: 5px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.university-area {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    width: 210px;
+}
+
+.uni-name {
+    font-size: 0.72em;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+}
+
+.uni-tagline {
+    font-size: 0.58em;
+    color: #e07820;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+/* ---- NAV ---- */
+nav {
+    background-color: #2a4a5e;
+    padding: 0 20px 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background-color: #3d6478;
+    padding: 5px 14px;
+    font-size: 0.82em;
+    border-radius: 3px;
+}
+
+nav a:hover, nav a.active {
+    background-color: #4d8099;
+}
+
+.nav-search {
+    margin-left: 8px;
+    background-color: #b03050;
+    border: none;
+    padding: 5px 12px;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 3px;
+    width: 150px;
+}
+
+.nav-search::placeholder { color: rgba(255,255,255,0.65); }
+
+/* ---- MAIN CONTENT BOX ---- */
+.main-content {
+    background-color: #1e3545;
+    margin: 0 16px 16px 16px;
+    border-radius: 4px;
+    padding: 28px;
+    min-height: 380px;
+}
+
+/* =============================================
+   HOME PAGE
+   ============================================= */
+
+.home-layout {
+    display: table;
+    width: 100%;
+    height: 300px;
+}
+
+.home-left {
+    display: table-cell;
+    vertical-align: middle;
+    width: 56%;
+    padding-right: 10px;
+}
+
+/* hero image is now a plain <img> tag in home.html — no CSS needed here */
+
+.home-arrow-wrap {
+    display: table-cell;
+    vertical-align: middle;
+    width: 30px;
+    text-align: center;
+}
+
+.carousel-arrow {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+    padding: 8px 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 2px;
+    display: block;
+}
+
+.home-divider {
+    display: table-cell;
+    width: 1px;
+    background-color: #4a7090;
+}
+
+.home-right {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 30px;
+    width: 44%;
+}
+
+/* Sign-in inputs */
+.field-input {
+    display: block;
+    width: 100%;
+    background-color: #3d6478;
+    border: none;
+    padding: 9px 12px;
+    margin-bottom: 11px;
+    color: white;
+    font-size: 0.86em;
+    border-radius: 2px;
+}
+
+.field-input::placeholder { color: rgba(255,255,255,0.6); }
+
+.signin-btn {
+    display: block;
+    width: 100%;
+    background-color: #30b8c8;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 0.95em;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.signin-btn:hover { background-color: #25a0b0; }
+
+.no-account {
+    text-align: center;
+    font-size: 0.8em;
+    color: rgba(255,255,255,0.6);
+}
+
+.no-account a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* =============================================
+   SIGN UP PAGE
+   ============================================= */
+
+.signup-layout {
+    display: table;
+    width: 100%;
+}
+
+.signup-col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 14px;
+}
+
+.signup-col:first-child { padding-left: 0; }
+.signup-col:last-child  { padding-right: 0; }
+
+.signup-divider {
+    display: table-cell;
+    width: 1px;
+    background-color: #4a7090;
+    vertical-align: stretch;
+}
+
+.su-label {
+    font-size: 0.78em;
+    color: rgba(255,255,255,0.75);
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 12px;
+}
+
+.su-label:first-child { margin-top: 0; }
+
+.su-input {
+    display: block;
+    width: 100%;
+    background-color: #3d6478;
+    border: none;
+    padding: 8px 10px;
+    color: white;
+    font-size: 0.83em;
+    border-radius: 2px;
+}
+
+.su-input::placeholder { color: rgba(255,255,255,0.45); }
+
+.su-select {
+    display: block;
+    width: 100%;
+    background-color: #3d6478;
+    border: none;
+    padding: 8px 10px;
+    color: white;
+    font-size: 0.83em;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.dob-row {
+    display: table;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.dob-col {
+    display: table-cell;
+    padding-right: 5px;
+    vertical-align: bottom;
+}
+
+.dob-col:last-child { padding-right: 0; }
+
+.dob-sub {
+    font-size: 0.7em;
+    color: rgba(255,255,255,0.5);
+    display: block;
+    margin-bottom: 3px;
+}
+
+.dob-input {
+    display: block;
+    width: 100%;
+    background-color: #3d6478;
+    border: none;
+    padding: 7px 8px;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 2px;
+}
+
+.signup-btn {
+    display: block;
+    width: 100%;
+    background-color: #30b8c8;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 0.95em;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    margin-top: 18px;
+    text-align: center;
+}
+
+.signup-btn:hover { background-color: #25a0b0; }
+
+.timestamp {
+    text-align: right;
+    font-size: 0.68em;
+    color: rgba(255,255,255,0.4);
+    margin-top: 18px;
+}
+
+/* =============================================
+   COMPANIES LIST PAGE
+   ============================================= */
+
+.table-header-row {
+    background-color: #3a6070;
+    padding: 8px 14px;
+    display: table;
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+    margin-bottom: 2px;
+}
+
+.table-header-row .th-name {
+    display: table-cell;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: rgba(255,255,255,0.85);
+}
+
+.table-header-row .th-loc {
+    display: table-cell;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: rgba(255,255,255,0.85);
+    text-align: right;
+    width: 140px;
+}
+
+.company-row {
+    border-bottom: 1px solid #2d5068;
+    padding: 10px 14px;
+    display: table;
+    width: 100%;
+    cursor: pointer;
+}
+
+.company-row:hover { background-color: #253f52; }
+
+.co-name-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.co-name {
+    font-size: 0.9em;
+    color: white;
+    font-weight: bold;
+    display: block;
+}
+
+.co-type {
+    font-size: 0.72em;
+    color: rgba(255,255,255,0.5);
+    display: block;
+}
+
+.co-loc-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    width: 140px;
+}
+
+.loc-text {
+    font-size: 0.82em;
+    color: rgba(255,255,255,0.7);
+}
+
+.badge {
+    display: inline-block;
+    background-color: #cc2233;
+    color: white;
+    font-size: 0.7em;
+    font-weight: bold;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 17px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.row-arrow {
+    color: rgba(255,255,255,0.35);
+    margin-left: 3px;
+}
+
+/* =============================================
+   ACCOUNT / COMPANY PAGE
+   ============================================= */
+
+.account-layout {
+    display: table;
+    width: 100%;
+}
+
+.account-left {
+    display: table-cell;
+    vertical-align: top;
+    width: 44%;
+    padding-right: 20px;
+}
+
+.account-divider {
+    display: table-cell;
+    width: 1px;
+    background-color: #4a7090;
+}
+
+.account-right {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 20px;
+}
+
+/* triangle logo placeholder */
+.co-logo {
+    width: 55px;
+    height: 55px;
+    background-color: #4a7090;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    margin-bottom: 12px;
+}
+
+.co-profile-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2px;
+}
+
+.co-profile-detail {
+    font-size: 0.78em;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+}
+
+.social-row { margin: 6px 0 10px 0; }
+
+.social-icon {
+    color: #30b8c8;
+    font-size: 0.85em;
+    margin-right: 7px;
+    text-decoration: none;
+}
+
+hr.co-divider {
+    border: none;
+    border-top: 1px solid #3d6478;
+    margin: 10px 0;
+}
+
+.address-block {
+    font-size: 0.78em;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+}
+
+.address-block strong {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.85em;
+}
+
+.req-box {
+    background-color: #35b5c5;
+    padding: 12px 14px;
+    border-radius: 4px;
+    margin-top: 14px;
+}
+
+.req-box h4 {
+    font-size: 0.82em;
+    text-align: center;
+    margin-bottom: 8px;
+    text-decoration: underline;
+}
+
+.req-box p {
+    font-size: 0.78em;
+    line-height: 1.65;
+    color: white;
+}
+
+.req-label {
+    font-weight: bold;
+    display: block;
+    margin-top: 6px;
+}
+
+.edit-btn-small {
+    display: block;
+    width: 50px;
+    margin: 10px auto 0 auto;
+    background-color: #3d6478;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    font-size: 0.78em;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* applicant tabs */
+.app-tabs {
+    display: table;
+    width: 100%;
+    margin-bottom: 2px;
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.app-tab {
+    display: table-cell;
+    padding: 7px;
+    font-size: 0.76em;
+    text-align: center;
+    background-color: #2a4a5e;
+    color: rgba(255,255,255,0.6);
+}
+
+.app-tab.active {
+    background-color: #35b5c5;
+    color: white;
+    font-weight: bold;
+}
+
+.applicant-row {
+    border-bottom: 1px solid #2d5068;
+    padding: 8px 6px;
+    display: table;
+    width: 100%;
+}
+
+.ap-name-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.ap-name {
+    font-size: 0.82em;
+    color: white;
+    display: block;
+}
+
+.ap-uni {
+    font-size: 0.68em;
+    color: rgba(255,255,255,0.45);
+    display: block;
+}
+
+.ap-gpa-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    font-size: 0.78em;
+    color: rgba(255,255,255,0.6);
+    width: 80px;
+}
